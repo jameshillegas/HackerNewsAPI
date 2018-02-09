@@ -1,0 +1,16 @@
+﻿@model IEnumerable<HackerNewsAPI.Models.Story>
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h3>Search Results</h3>
+
+<p>
+    Showing @Model.Count().ToString() results for query: &quot;@(ViewBag.SearchQuery)&quot;<br />
+    <a href="@Url.Action("Index")">Return to Index</a>
+</p>
+
+<div id="newsStories">
+    @Html.Partial("_StoryList", Model)
+</div>
